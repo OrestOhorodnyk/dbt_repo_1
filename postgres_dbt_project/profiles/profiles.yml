@@ -3,7 +3,7 @@ postgres_dbt:
   outputs:
     dev:
       type: postgres
-      host: "{{ env_var('DBT_HOST', 'localhost') }}"
+      host: "{{ env_var('DBT_HOST', 'postgres-service') }}"
       user: "{{ env_var('DBT_USER', 'dbt') }}"
       password: "{{ env_var('DBT_PASS', 'dbt') }}"
       port: "{{ env_var('DBT_PORT', '5432') | int }}"
