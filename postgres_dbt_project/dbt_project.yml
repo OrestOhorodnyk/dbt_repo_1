@@ -68,3 +68,7 @@ seeds:
         product_id: integer
         quantity: integer
 
+on-run-start:
+  - "{{ adapter.create_schema(api.Relation.create(database=target.database, schema='bronze')) }}"
+  - "{{ adapter.create_schema(api.Relation.create(database=target.database, schema='silver')) }}"
+  - "{{ adapter.create_schema(api.Relation.create(database=target.database, schema='gold')) }}"
